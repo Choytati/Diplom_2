@@ -4,7 +4,8 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import praktikum.model.Model;
+import praktikum.model.IngredientsArrayModel;
+import praktikum.model.UserModel;
 
 import static io.restassured.RestAssured.given;
 
@@ -25,14 +26,14 @@ public class BaseClient {
                 .get(uri);
     }
 
-    protected final Response doPostRequest(String uri, Model body) {
+    protected final Response doPostRequest(String uri, UserModel body) {
         return given()
                 .spec(baseSpec())
                 .body(body)
                 .post(uri);
     }
 
-    protected final Response doPostRequest(String uri, String accessToken, Model body) {
+    protected final Response doPostRequest(String uri, String accessToken, IngredientsArrayModel body) {
         return given()
                 .spec(baseSpec())
                 .header("Authorization", accessToken)
@@ -40,7 +41,7 @@ public class BaseClient {
                 .post(uri);
     }
 
-    protected final Response doPatchRequest(String uri, String accessToken, Model body) {
+    protected final Response doPatchRequest(String uri, String accessToken, UserModel body) {
         return given()
                 .header("Authorization", accessToken)
                 .spec(baseSpec())

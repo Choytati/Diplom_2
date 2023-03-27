@@ -1,6 +1,6 @@
 package praktikum.model;
 
-public class IngredientsArrayModel implements Model{
+public class IngredientsArrayModel{
     private String[] ingredients;
 
     public IngredientsArrayModel(String[] ingredients) {

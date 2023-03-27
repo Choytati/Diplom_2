@@ -1,6 +1,6 @@
 package praktikum.model;
 
-    public class UserModel implements Model {
+    public class UserModel{
         private String email;
         private String password;
         private String name;
